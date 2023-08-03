@@ -10,20 +10,21 @@ mkfs.ext4 /dev/sda3
 mount /dev/sda3 /mnt
 
 
-pacstrap -K /mnt base base-devel linux linux-firmware nano
+pacstrap -K /mnt base base-devel linux linux-firmware nano networkmanager network-manager-applet wpa_supplicant wireless_tools
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 arch-chroot /mnt
 ln -sf /usr/share/Europe/Istanbul /etc/localtime
 hwclock --systohc
+
 nano /etc/locale.gen uncomment en_US.UTF-8 UTF-8
 locale-gen
 nano /etc/locale.conf LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 nano /etc/vconsole.conf  KEYMAP=trq
-nano /etc/hostname name
-useradd -m -G sys,wheel,users,adm,log -s /bin/bash name
-passwd mrp
+nano /etc/hostname hostname
+useradd -m -G sys,wheel,users,adm,log -s /bin/bash username
+passwd username
 passwd root
 
 mkinitcpio -P
@@ -31,10 +32,10 @@ mkinitcpio -P
 nano /etc/hosts
 127.0.0.1 localhost
 ::        localhost
-127.0.1.1  name.localdomain  name
+127.0.1.1  hostname.localdomain  hostname
 
 
-EDITOR=nano visudo   name ALL = (ALL) ALL
+EDITOR=nano visudo   username ALL = (ALL) ALL
 nano /etc/pacman.conf
 
 pacman -Syy
