@@ -1,1 +1,1 @@
-yay -S xfce4 xfce4-goodies lightdm-webkit-theme-aether thunar-git thunar-archive-plugin-git thunar-media-tags-plugin-git mpv-git nomacs qalculate-gtk-git emacs-git calibre-git hardinfo gnome-keyring-git pavucontrol-git wireless_tools-git wpa_supplicant-git networkmanager-git network-manager-applet-git
+yay -S  lightdm-webkit-theme-aether nomacs qalculate-gtk-git hardinfo
