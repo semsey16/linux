@@ -1,0 +1,1 @@
+cd "$HOME/.conky/" && conky -c "$HOME/.conky/conky2core"
